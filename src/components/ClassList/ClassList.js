@@ -7,7 +7,10 @@ export default class ClassList extends Component {
     super()
 
     this.state = {
-      students: []
+      students: [],
+      goBack: function (){
+        window.history.back()
+      }
     }
     
   }
@@ -34,6 +37,7 @@ export default class ClassList extends Component {
         <h1>{this.props.match.params.class}</h1>
         <h2>ClassList:</h2>
           {students}
+          <button onClick={this.state.goBack}>Back</button>
       </div>
     )
   }
